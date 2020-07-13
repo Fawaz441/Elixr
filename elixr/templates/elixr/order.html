@@ -1,0 +1,115 @@
+{% extends 'elixr/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+
+<div class="order-wrapper">
+    <h1>Cart</h1>
+    <br>
+    <div class="grid">
+        <div class="suits">
+            {% if order.ord_suits %}
+            <h3>SUITS<span></span></h3>
+            <table>
+                {% for obj in order.ord_suits.all %}
+                <tr>
+                    <td class="space">{{obj.suit.name}}</td>
+                    <td class="space">{{obj.quantity}}</td>
+                    <td class="space">${{obj.get_total|floatformat:2|intcomma}}</td>
+                    <td><a href="{% url 'remove_suit_single' slug=obj.suit.slug %}" class="minus"><i class="fas fa-minus"></i></a></td>
+                   
+                    <td><a href="{% url 'remove_suit' slug=obj.suit.slug %}" class="delete"><i class="fas fa-trash"></i></a></td>
+
+                </tr>
+                {% empty %}
+                <p>No suits ordered.</p>
+                {% endfor %}
+                
+                {% if order.suit_total %}
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr class="hover">
+                    <td colspan="3"><span></span></td>
+                </tr>
+                <tr class="total">
+                    <td>TOTAL :</td>
+                    <td></td>
+                    <td>
+                        ${{order.suit_total|floatformat:2|intcomma}}
+                    </td>
+                </tr>
+                {% endif %}
+            </table>
+            {% endif %}
+        </div>
+        
+        <div class="suits ships">
+            {% if order.ord_ships %}
+            <h3>SHIPS<span></span></h3>
+            <table>
+                {% for obj in order.ord_ships.all %}
+                <tr>
+                    <td class="space">{{obj.ship.name}}</td>
+                    <td class="space">{{obj.quantity}}</td>
+                    <td class="space">${{obj.get_total|floatformat:2|intcomma}}</td>
+                    <td><a href="{% url 'remove_ship_single' slug=obj.ship.slug %}" class="minus"><i class="fas fa-minus"></i></a></td>
+                    <td><a href="{% url 'remove_ship' slug=obj.ship.slug %}" class="delete"><i class="fas fa-trash"></i></a></td>
+                </tr>
+                {% empty %}
+                <p>No ships ordered.</p>
+                {% endfor %}
+                
+                
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr class="hover">
+                    <td colspan="3"><span></span></td>
+                </tr>
+                {% if order.ship_total %}
+                <tr class="total">
+                    <td>TOTAL :</td>
+                    <td></td>
+                    <td>
+                        ${{order.ship_total|floatformat:2|intcomma}}
+                    </td>
+                </tr>
+                {% endif %}
+                
+            </table>
+        </div>
+        
+        
+        {% endif %}
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if order.total %}
+    <center>TOTAL COST :${{order.total|floatformat:2|intcomma}}<br>
+        <a href="{% url 'customer_info' %}" class="checkout">CHECKOUT</a>
+    </center>
+    {% else %}
+    {{blank}}
+    {% endif %}
+{{undelivered_order}}
+{{undelivered_order.delivered}}
+{{undelivered_order.total}}
+</div>
+
+
+</div>
+{% endblock %}

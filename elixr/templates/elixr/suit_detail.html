@@ -1,0 +1,22 @@
+{% extends 'elixr/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<div class="detail-wrapper">
+    <div class="info">
+        <h2 class="title">{{object.name}}</h2>
+        <span class="price">${{object.price|floatformat:2}}</span>
+        <br>
+        <i class="fas fa-eye" style="color:#fff;margin-top:0.5rem;"></i>
+        <span style="color:#fff;">{{object.views}}</span>
+        <p>{{object.description}}</p>
+        <a href="{% url 'add_st_to_cart' slug=object.slug %}">
+            Purchase
+        </a>
+    </div>
+    <div class="brand-image">
+        <img src="{{object.image.url}}" alt="{{object.name}}">
+    </div>
+
+</div>
+{% endblock %}

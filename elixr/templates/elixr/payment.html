@@ -1,0 +1,11 @@
+{% extends 'elixr/base.html' %}
+{% load paystack %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+<div class="stuffs">
+&#8358;{{amount|floatformat:2|intcomma}}
+{% paystack_button amount=amount email=email button_class='payment_btns' %}
+</div>
+{% endblock %}

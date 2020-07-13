@@ -1,0 +1,78 @@
+h1 {
+    color:#fff;
+    margin:1rem 30px;
+    position: relative;
+    width:fit-content;
+    overflow:hidden;
+    padding-bottom: 3px;
+}
+
+h1 span{
+    position: absolute;
+    width:100%;
+    height:1px;
+    bottom:0;
+    left:0;
+    display:block;
+    box-shadow:1px 2px 3px 3px #0ecf,-1px -19px 14px 8px #0ecf;
+}
+
+.new{
+    font-size:0.8rem;
+    background:red;
+    margin-bottom:-5px !important;
+    padding:1px 2px;
+    border-radius: 2px;
+    box-shadow:1px 1px 3px 1px salmon,-1px -1px 3px 1px salmon;
+}
+
+.suit_wrapper{
+    display:flex;
+    flex-basis:25%;
+    color:#fff;
+    margin:0 30px;
+    min-height:100vh;
+    flex-wrap: wrap;
+    
+}
+
+.suit_card{
+    height:300px;
+    width:250px;
+    position: relative;
+    margin-right:3rem;
+    margin-bottom:2rem;
+}
+
+.suit_image{
+    position: relative;
+    top:0;
+    left:0;
+    height:70%;
+    width:100%;
+    overflow:hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.suit_image img{
+    height:100%;
+    width:100%;
+}
+
+.suit_details{
+    background:rgb(3, 47, 68);
+    height:30%;
+    text-align: center;
+    display:flex;
+    flex-direction:column;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.suit_details span{
+    display:block;
+    margin:auto;
+
+}
+

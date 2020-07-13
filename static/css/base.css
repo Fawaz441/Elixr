@@ -1,0 +1,165 @@
+@font-face{
+    src:url("../fonts/Roboto-Thin.ttf");
+    font-family: main;
+}
+
+a{text-decoration: none;}
+
+*{padding:0;margin:0;}
+body,html{
+    /* background:red; */
+    font-family: main;
+    font-weight:900;
+    position: relative;
+    overflow-x:hidden;
+   scroll-behavior: smooth;
+}
+
+nav{
+    height:70px;
+    background:rgb(3, 3, 44);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.brand_a{color:#fff;}
+
+.brand{
+    padding:100px;
+    font-size:2.5rem;
+    font-weight:1000;
+}
+
+.main-nav{
+    display:flex;
+    padding-right:3rem;
+    list-style:none;
+}
+
+.main-nav li{
+    padding-right:2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-nav li a{
+    color:#fff;
+    transition:0.3s ease-in-out;
+}
+
+.main-nav li a:hover{
+    color:#0ec4ff;
+}
+
+.message{
+    background:rgb(182, 73, 10);
+    padding:10px 3rem;
+    color:#fff;
+    /* padding-bottom:5px; */
+    position: relative;
+}
+
+.message .exit{
+    position: absolute;
+    right:2rem;
+    display:inline-block;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.video-backdrop{
+    background:rgb(3,3,44);
+    z-index:-1;
+    opacity:0.7;
+}
+video{z-index:-2}
+video,.video-backdrop{
+    height:100vh;
+    width:100vw;
+    position: fixed;
+    object-fit: cover;
+    left:0;
+    top:0;
+}
+
+.wrapper{
+    min-height:100vh;
+}
+
+.topper{
+    font-size:1.5rem;
+    padding-left:2rem;
+    /* padding-top:2rem; */
+    transform:translateY(2rem);
+    color:#fff;
+    margin-right:1rem;
+    cursor: pointer;
+}
+
+.footer{
+    background:black;
+    color:rgb(73, 70, 70);
+    margin-top:2rem;
+}
+
+.footer-wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    /* padding-top:1.5rem; */
+}
+
+.footer-wrapper h3{
+    padding-bottom:1rem;
+}
+
+.footer-wrapper ul{
+    list-style: none;
+}
+
+.footer-wrapper ul li{
+    padding-bottom:0.5rem;
+    transition:0.3s ease-in-out;
+}
+
+.footer-wrapper ul li:hover{
+    color:#fff;
+}
+
+.disclaimer{
+    padding-bottom:1rem;
+    text-align:center;
+}
+
+@media(max-width:690px){
+    .footer-wrapper{
+        grid-template-columns: 1fr;
+        justify-items:stretch;
+        padding-left:1rem;
+    }
+
+    .footer-wrapper h3{
+        padding-bottom:0.5rem;
+    }
+
+    .footer-wrapper ul{
+        margin-bottom:1rem;
+    }
+
+    .topper{
+        margin-left:70%;
+    }
+
+    .brand{
+        padding:30px;
+    }
+
+    .main-nav{
+        padding-right:1rem;
+    }
+    
+
+
+}

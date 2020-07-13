@@ -1,0 +1,15 @@
+.payment_btns{
+    background:red;
+    border:none;
+    outline:none;
+    padding:0.5rem 3rem;
+    color:#fff;
+    cursor: pointer;
+}
+
+.stuffs{
+    width:300px;
+    margin:10% 30%;
+    background:#fff;
+    padding:3rem 5rem;
+}

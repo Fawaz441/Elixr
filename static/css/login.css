@@ -1,0 +1,49 @@
+
+.login-wrapper{
+    margin:2rem 1rem;
+}
+
+.trigger-display-log-in{
+    display:none;
+}
+
+.login-wrapper form{
+    background:rgb(4, 64, 98);
+    padding: 2rem 2rem 3rem 2rem;
+    color:#fff;
+    width:300px;
+}
+
+.login-wrapper form h2{
+    margin-bottom:1rem;
+}
+
+.login-wrapper form input:not([type="submit"]){
+    display:block;
+    padding:5px;
+    border:none;
+    outline:none;
+    margin-bottom:1rem;
+}
+
+.login-wrapper form input[type="submit"]{
+    padding:10px 30px;
+    /* border-radius:5px; */
+    background:rgb(61, 126, 187);
+    color:#ffff;
+    outline:none;
+    border:none;
+    box-shadow:1px 1px 2px 1px rgb(9, 139, 214),-1px -1px 2px 1px rgb(15, 152, 231);
+    cursor: pointer;
+}
+
+@media(min-width:420px){
+    .login-wrapper form{
+        width:300px;
+        margin-left:calc(50vw - 230px);
+    }
+    .login-wrapper{
+        margin:4rem 3rem;
+    }
+   
+}

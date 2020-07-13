@@ -1,0 +1,25 @@
+{% extends 'elixr/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/suit_list.css' %}">
+<h1>Latest Ships<span></span></h1>
+<div class="suit_wrapper">
+    {% for suit in object_list %}
+    <div class="suit_card">
+        <a href="{{suit.get_absolute_url}}">
+            <div class="suit_image">
+                <img src="{{suit.image.url}}" alt="{{image.name}}">
+            </div>
+        </a>
+        <p class="suit_details">
+            {% if suit.new %}
+            <span class="new">New</span>
+            {% endif %}
+            <span>{{suit.name}}</span>
+            <span>${{suit.price|floatformat:2|intcomma}}</span>
+        </p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

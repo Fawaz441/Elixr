@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0",user-scalable="no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ELIXR.</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <nav>
+        <a class="brand_a" href="{% url 'index' %}">
+            <span class="brand">
+                ELIXR.
+            </span>
+        </a>
+        <div class="main-nav">
+            {% if not user.is_authenticated %}
+            <li><a href="{% url 'login' %}" class="trigger-display-log-in">Log in</a></li>
+            {% else %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i></a></li>
+            {% endif %}
+            <li><a href="{% url 'suits'%}" class="trigger-suit-ships">Suits</a></li>
+            {% block show-ships %}
+            {% endblock %}    
+            {% block show-signout %}
+            {% endblock %}
+        </div>
+    </nav>
+    {% for message in messages %}
+    <div class="message">
+        {{message}}
+        <span class="exit">X</span>
+    </div>
+    {% endfor %}
+    
+    <div class="video-backdrop"></div>
+    <video src="{% static 'videos/space_ship_video.mp4' %}" loop="true" autoplay="true"></video>
+
+
+
+    <div class="wrapper">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+
+
+    <div class="footer">
+        <span class="arrow-top"><i class="far topper fa-arrow-alt-circle-up"></i></span>
+        <div class="footer-wrapper">
+            <ul>
+                <b><h3>Explore</h3></b>
+                <li>More suits</li>
+                <li>Suit casings</li>
+                <li>Suit licenses</li>
+            </ul>
+            <ul>
+                <b><h3>Contribute</h3></b>
+                <li>Donate suits</li>
+                <li>Suggest</li>
+                <li>Volunteer</li>
+            </ul>
+            <ul>
+                <b><h3>Packages</h3></b>
+                <li>Suit hunts</li>
+                <li>Alien Alliances</li>
+                <li>Design</li>
+            </ul>
+            <ul>
+                <b><h3>Contact</h3></b>
+                <li>Whatsapp</li>
+                <li>Youtube</li>
+                <li>Twitter</li>
+            </ul>
+            <ul>
+                <b><h3>Company</h3></b>
+                <li>About ELIXR.</li>
+                <li>Groups</li>
+                <li>Staff</li>
+                <li>Partners</li>
+            </ul>
+        </div>
+        <p class="disclaimer">
+            &copy;2020 by ELIXR Media Group.<br/>
+        </p>
+    </div>
+</body>
+<script src="{% static 'js/all.js' %}"></script>
+<script src="{% static 'js/base.js' %}"></script>
+<script>
+var message = document.querySelector('.message');
+var exit = document.querySelector('.exit');
+exit.addEventListener('click',function(){
+    message.style.display = 'none';
+})
+</script>
+</html>
