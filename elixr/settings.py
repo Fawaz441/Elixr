@@ -14,8 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
-STATIC_DIR = os.path.join(BASE_DIR,'static')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,12 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'elixr',
-    'paystack',
 ]
 
 # Paystack#
-PAYSTACK_PUBLIC_KEY = 'pk_test_a1eb2877f34b23dc035896e24d67f6e196384096'
-PAYSTACK_SECRET_KEY = 'sk_test_43496ef18a7f1409681086ce55457757b0ddc541'
+PAYSTACK_PUBLIC_KEY = '****'
+PAYSTACK_SECRET_KEY = '****'
 PAYSTACK_SUCCESS_URL = 'index'
 PAYSTACK_FAILED_URL = 'cart'
 
@@ -130,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR]
-MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 
 
